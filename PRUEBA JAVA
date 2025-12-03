@@ -1,0 +1,24 @@
+@startuml
+
+class Comensal {
+    + nombre : String
+    + cedula : String
+    --
+    + solicitarTicket()
+}
+
+class Ticket {
+    + fecha : Date
+    + estado : String
+}
+
+class Menu {
+    + dia : String
+    + platoPrincipal : String
+}
+
+' Definición de las relaciones
+Comensal "1" -- "0..1" Ticket : tiene
+Menu "1" o-- "1" Ticket : asigna
+
+@enduml
